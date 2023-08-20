@@ -13,7 +13,7 @@ if (!empty($uname) || !empty($email) || !empty($upass1) || !empty($upass2) )
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "mydatabase";
+$dbname = "test2";
 
 
 
@@ -21,8 +21,7 @@ $dbname = "mydatabase";
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 
 if (mysqli_connect_error()){
-  die('Connect Error ('. mysqli_connect_errno() .') '
-    . mysqli_connect_error());
+  die('Connect Error ('. mysqli_connect_errno() .') ' . mysqli_connect_error());
 }
 else{
   $SELECT = "SELECT email From register Where email = ? Limit 1";
@@ -30,7 +29,7 @@ else{
 
 //Prepare statement
      $stmt = $conn->prepare($SELECT);
-     $stmt->bind_param("s", $email);
+     $stmt->bind_param("s",$email);
      $stmt->execute();
      $stmt->bind_result($email);
      $stmt->store_result();
