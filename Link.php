@@ -24,8 +24,8 @@ if (mysqli_connect_error()){
   die('Connect Error ('. mysqli_connect_errno() .') ' . mysqli_connect_error());
 }
 else{
-  $SELECT = "SELECT email From register Where email = ? Limit 1";
-  $INSERT = "INSERT Into register (uname , email ,upass1, upass2 )values(?,?,?,?)";
+  $SELECT = "SELECT email From test2 Where email = ? Limit 1";
+  $INSERT = "INSERT Into test2 (uname , email ,upass1, upass2 )values(?,?,?,?)";
 
 //Prepare statement
      $stmt = $conn->prepare($SELECT);
